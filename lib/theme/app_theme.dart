@@ -1,29 +1,45 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static const Color primary = Color(0xFFFF4081);
-  static const Color secondary = Color(0xFF00E5FF);
-  static const Color background = Color(0xFF180A16);
-  static const Color surface = Color(0xFF241020);
-  static const Color card = Color(0xFF30162C);
-  static const Color textPrimary = Colors.white;
-  static const Color textSecondary = Colors.white70;
+  static const Color primary = Color(0xFFAA00FF);
+  static const Color secondary = Color(0xFFE040FB);
+  static const Color background = Color(0xFF12081A);
+  static const Color surface = Color(0xFF20102C);
+  static const Color card = Color(0xFF2E1740);
+  static const Color textPrimary = Color(0xFFFFFFFF);
+  static const Color textSecondary = Color(0xFFA88EB5);
 
-  static ThemeData get darkTheme => ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: background,
-        colorScheme: const ColorScheme.dark(
-          primary: primary,
-          secondary: secondary,
-          surface: surface,
-        ),
-        navigationBarTheme: NavigationBarThemeData(
-          backgroundColor: surface,
-          indicatorColor: primary.withValues(alpha: 0.25),
-          labelTextStyle: WidgetStateProperty.all(
-            const TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: textSecondary),
-          ),
-        ),
-      );
+  static final ThemeData darkTheme = ThemeData(
+    useMaterial3: true,
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: background,
+    colorScheme: const ColorScheme.dark(
+      primary: primary,
+      secondary: secondary,
+      surface: surface,
+    ),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: surface,
+      elevation: 0,
+      centerTitle: true,
+      iconTheme: IconThemeData(color: textPrimary),
+      titleTextStyle: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: textPrimary,
+      ),
+    ),
+    cardTheme: CardThemeData(
+      color: card,
+      elevation: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+    ),
+    navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: surface,
+      indicatorColor: primary.withValues(alpha: 0.25),
+      labelTextStyle: WidgetStateProperty.all(
+        const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+      ),
+    ),
+  );
 }
