@@ -1,4 +1,4 @@
-package com.pulsefit.workout.hiit
+package com.quickword.language.builder
 
 import io.flutter.embedding.android.FlutterActivity
 
